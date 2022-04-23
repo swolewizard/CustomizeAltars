@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "9IECtELYr+as6MCR4OGAFdo9JqJ/4XMAqDAO7SwLbfV1sdVKOp7s3jeF8yIitlJVaR3zn7+WqjdEXN79RkHh6A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jayden\\source\\repos\\Valheim_Mods\\CustomizeAltars\\CustomizeAltar.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jayden\\.nuget\\packages\\harmonyx\\2.10.0\\harmonyx.2.10.0.nupkg.sha512",
+    "C:\\Users\\Jayden\\.nuget\\packages\\mono.cecil\\0.11.4\\mono.cecil.0.11.4.nupkg.sha512",
+    "C:\\Users\\Jayden\\.nuget\\packages\\monomod\\22.3.23.4\\monomod.22.3.23.4.nupkg.sha512",
+    "C:\\Users\\Jayden\\.nuget\\packages\\monomod.runtimedetour\\22.3.23.4\\monomod.runtimedetour.22.3.23.4.nupkg.sha512",
+    "C:\\Users\\Jayden\\.nuget\\packages\\monomod.utils\\22.3.23.4\\monomod.utils.22.3.23.4.nupkg.sha512"
+  ],
+  "logs": []
+}

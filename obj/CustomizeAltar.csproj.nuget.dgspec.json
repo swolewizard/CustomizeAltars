@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Jayden\\source\\repos\\Valheim_Mods\\CustomizeAltars\\CustomizeAltar.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Jayden\\source\\repos\\Valheim_Mods\\CustomizeAltars\\CustomizeAltar.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jayden\\source\\repos\\Valheim_Mods\\CustomizeAltars\\CustomizeAltar.csproj",
+        "projectName": "CustomizeAltars",
+        "projectPath": "C:\\Users\\Jayden\\source\\repos\\Valheim_Mods\\CustomizeAltars\\CustomizeAltar.csproj",
+        "packagesPath": "C:\\Users\\Jayden\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jayden\\source\\repos\\Valheim_Mods\\CustomizeAltars\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Jayden\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "HarmonyX": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "MonoMod": {
+              "target": "Package",
+              "version": "[22.3.23.4, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
