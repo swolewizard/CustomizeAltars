@@ -117,41 +117,41 @@ namespace CustomizeAltar
 			}
 		}
 
-		[HarmonyPatch(typeof(ItemStand), "Awake")]
-		public static class ItemStandAwake
+	[HarmonyPatch(typeof(ItemStand), "Awake")]
+	public static class ItemStandAwake
+	{
+		public static void Postfix(ItemStand __instance)
 		{
-			public static void Postfix(ItemStand __instance)
+			var altarConfigs = GetJson();
+			var Items = new List<ItemDrop>();
+			//var ItemsType = new List<ItemDrop.ItemData.ItemType>();
+
+			foreach (var config in altarConfigs)
 			{
-				var altarConfigs = GetJson();
-				var Items = new List<ItemDrop>();
-				//var ItemsType = new List<ItemDrop.ItemData.ItemType>();
-
-				foreach (var config in altarConfigs)
+				try
 				{
-					try
+					var stand = config.ItemStandName + "(Clone)";
+					//Debug.Log($"Itemstand looking {__instance.gameObject.name} with config {config.ItemStandName}");
+
+					if (__instance.gameObject.name == stand && config.ItemStandName != null)
 					{
-						var stand = config.ItemStandName + "(Clone)";
-						//Debug.Log($"Itemstand looking {__instance.gameObject.name} with config {config.ItemStandName}");
+						var scraficeitem = ObjectDB.instance.GetItemPrefab(config.SacrificeItem);
+						var ItemDrop = scraficeitem.GetComponentInChildren<ItemDrop>(true);
+						var ItemData = ItemDrop.m_itemData;
+						//var ItemType = ItemData.m_shared.m_itemType;
+						if (Items.Count() == 0)
+							Items.Add(ItemDrop);
+						//if (ItemsType.Count() == 0 )
+						//	ItemsType.Add(ItemType);
 
-						if (__instance.gameObject.name == stand && config.ItemStandName != null)
-						{
-							var scraficeitem = ObjectDB.instance.GetItemPrefab(config.SacrificeItem);
-							var ItemDrop = scraficeitem.GetComponentInChildren<ItemDrop>(true);
-							var ItemData = ItemDrop.m_itemData;
-							//var ItemType = ItemData.m_shared.m_itemType;
-							if (Items.Count() == 0)
-								Items.Add(ItemDrop);
-							//if (ItemsType.Count() == 0 )
-							//	ItemsType.Add(ItemType);
-
-							__instance.m_supportedItems = Items;
-							Debug.Log($"Itemstand exist for {__instance.m_name} with object name {__instance.gameObject.name} setting to {config.SacrificeItem} with name {ItemData.m_shared.m_name}");
-						}
+						__instance.m_supportedItems = Items;
+						Debug.Log($"Itemstand exist for {__instance.m_name} with object name {__instance.gameObject.name} setting to {config.SacrificeItem} with name {ItemData.m_shared.m_name}");
 					}
-					catch (Exception e) { Debug.LogError($"Loading config for {config.ItemStandName + "(Clone)"} failed. {e.Message}"); }
 				}
+				catch (Exception e) { Debug.LogError($"Loading config for {config.ItemStandName + "(Clone)"} failed. {e.Message}"); }
 			}
 		}
+	}
 
         private void Awake()
         {
