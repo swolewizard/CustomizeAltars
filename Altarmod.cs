@@ -18,66 +18,60 @@ namespace CustomizeAltar
 
         public static string configPath = Path.Combine(BepInEx.Paths.ConfigPath, $"{ModGUID}.json");
         private Harmony _harmony;
-
-       	public static string configPath = Path.Combine(BepInEx.Paths.ConfigPath, $"{ModGUID}.json");
             
-            
-		public static string configPath = Path.Combine(BepInEx.Paths.ConfigPath, $"{ModGUID}.json");
-        
-        
-		[HarmonyPatch(typeof(OfferingBowl), "Awake")]
-		public static class AlterOfferBowlAwake
+	[HarmonyPatch(typeof(OfferingBowl), "Awake")]
+	public static class AlterOfferBowlAwake
+	{
+		public static void Postfix(OfferingBowl __instance)
 		{
-			public static void Postfix(OfferingBowl __instance)
+			if (__instance == null) return;
+			var altarConfigs = GetJson();
+
+			foreach (var config in altarConfigs)
 			{
-				if (__instance == null) return;
-				var altarConfigs = GetJson();
-
-				foreach (var config in altarConfigs)
+				try
 				{
-					try
+					if (GameObject.Find(config.AltarPrefabName + "(Clone)") != null)
 					{
-						if (GameObject.Find(config.AltarPrefabName + "(Clone)") != null)
+						var prefab = GameObject.Find(config.AltarPrefabName + "(Clone)");
+
+						prefab.GetComponentInChildren<OfferingBowl>().m_name = config.Name;
+						prefab.GetComponentInChildren<OfferingBowl>().m_bossPrefab = ZNetScene.instance.GetPrefab(config.BossPrefab).gameObject;
+						prefab.GetComponentInChildren<OfferingBowl>().m_bossItem = ZNetScene.instance.GetPrefab(config.SacrificeItem).GetComponent<ItemDrop>();
+						prefab.GetComponentInChildren<OfferingBowl>().m_bossItems = config.SacrificeAmount;
+						var ItemsEmpty = new List<ItemDrop>();
+						if (prefab.GetComponentsInChildren<ItemStand>(true).Count() == null)  //never because this gets overwritten
 						{
-							var prefab = GameObject.Find(config.AltarPrefabName + "(Clone)");
-							
-							prefab.GetComponentInChildren<OfferingBowl>().m_name = config.Name;
-							prefab.GetComponentInChildren<OfferingBowl>().m_bossPrefab = ZNetScene.instance.GetPrefab(config.BossPrefab).gameObject;
-							prefab.GetComponentInChildren<OfferingBowl>().m_bossItem = ZNetScene.instance.GetPrefab(config.SacrificeItem).GetComponent<ItemDrop>();
-							prefab.GetComponentInChildren<OfferingBowl>().m_bossItems = config.SacrificeAmount;
-							var ItemsEmpty = new List<ItemDrop>();
-							if (prefab.GetComponentsInChildren<ItemStand>(true).Count() == null)  //never because this gets overwritten
+							Debug.Log("Itemstand exist");
+							Debug.Log(config.SacrificeItem);
+							Debug.Log(prefab.GetComponentsInChildren<ItemStand>(true).Count());
+
+
+							Debug.Log(ZNetScene.instance.GetPrefab(config.SacrificeItem).GetComponent<ItemDrop.ItemData>());
+							var Items = new List<ItemDrop>
 							{
-								Debug.Log("Itemstand exist");
-								Debug.Log(config.SacrificeItem);
-								Debug.Log(prefab.GetComponentsInChildren<ItemStand>(true).Count());
+								new ItemDrop
+									{
+										m_itemData = ZNetScene.instance.GetPrefab(config.SacrificeItem).GetComponent<ItemDrop.ItemData>()
+									 }
+							};
 
-
-								Debug.Log(ZNetScene.instance.GetPrefab(config.SacrificeItem).GetComponent<ItemDrop.ItemData>());
-								var Items = new List<ItemDrop>
-								{
-									new ItemDrop
-										{
-											m_itemData = ZNetScene.instance.GetPrefab(config.SacrificeItem).GetComponent<ItemDrop.ItemData>()
-										 }
-								};
-
-								var ItemStands = prefab.GetComponentsInChildren<ItemStand>(true);
-								foreach (var ItemStand in ItemStands)
-                                {
-									Debug.Log($"Itemstand  set to {config.SacrificeItem}");
-									ItemStand.m_supportedItems = Items;
-								}
-								
+							var ItemStands = prefab.GetComponentsInChildren<ItemStand>(true);
+							foreach (var ItemStand in ItemStands)
+			{
+								Debug.Log($"Itemstand  set to {config.SacrificeItem}");
+								ItemStand.m_supportedItems = Items;
 							}
+
 						}
 					}
-					catch (Exception e)
-					{
-						Debug.LogError($"Loading config for {config.AltarPrefabName + "(Clone)"} failed. {e.Message}");
-					}
+				}
+				catch (Exception e)
+				{
+					Debug.LogError($"Loading config for {config.AltarPrefabName + "(Clone)"} failed. {e.Message}");
 				}
 			}
+		}
 		}
 
 		[HarmonyPatch(typeof(ItemStand), "CanAttach")]
