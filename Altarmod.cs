@@ -58,7 +58,7 @@ namespace CustomizeAltar
 
 							var ItemStands = prefab.GetComponentsInChildren<ItemStand>(true);
 							foreach (var ItemStand in ItemStands)
-			{
+							{
 								Debug.Log($"Itemstand  set to {config.SacrificeItem}");
 								ItemStand.m_supportedItems = Items;
 							}
@@ -72,7 +72,7 @@ namespace CustomizeAltar
 				}
 			}
 		}
-		}
+	}
 
 		[HarmonyPatch(typeof(ItemStand), "CanAttach")]
 		public static class ItemStandUseItemAttach
@@ -106,7 +106,7 @@ namespace CustomizeAltar
 					//return true;
 				}
 				if (__instance.m_supportedTypes.Contains(item.m_shared.m_itemType))
-                {
+               			 {
 					Debug.Log($"This is not a support Type");
 					__result = false;
 					return;
@@ -170,83 +170,83 @@ namespace CustomizeAltar
                 return;
             }
         }
-        private void GenerateConfigFile()
-        {
-            var altarConfigs = new List<AltarConfig>();
+	private void GenerateConfigFile()
+	{
+		var altarConfigs = new List<AltarConfig>();
 
-            // Vanilla
-            var MeadowsAltarConfig = new AltarConfig();
-            MeadowsAltarConfig.AltarPrefabName = "Eikthyrnir";
-            MeadowsAltarConfig.Name = "Mystical altar";
-            MeadowsAltarConfig.BossPrefab = "Eikthyr";
-            MeadowsAltarConfig.SacrificeItem = "TrophyDeer";
-            MeadowsAltarConfig.SacrificeAmount = 2;
-            altarConfigs.Add(MeadowsAltarConfig);
+		// Vanilla
+		var MeadowsAltarConfig = new AltarConfig();
+		MeadowsAltarConfig.AltarPrefabName = "Eikthyrnir";
+		MeadowsAltarConfig.Name = "Mystical altar";
+		MeadowsAltarConfig.BossPrefab = "Eikthyr";
+		MeadowsAltarConfig.SacrificeItem = "TrophyDeer";
+		MeadowsAltarConfig.SacrificeAmount = 2;
+		altarConfigs.Add(MeadowsAltarConfig);
 
-            var BlackForestAltarConfig = new AltarConfig();
-            BlackForestAltarConfig.AltarPrefabName = "GDKing";
-            BlackForestAltarConfig.Name = "Ancient bowl";
-            BlackForestAltarConfig.BossPrefab = "gd_king";
-            BlackForestAltarConfig.SacrificeItem = "AncientSeed";
-            BlackForestAltarConfig.SacrificeAmount = 3;
-            altarConfigs.Add(BlackForestAltarConfig);
+		var BlackForestAltarConfig = new AltarConfig();
+		BlackForestAltarConfig.AltarPrefabName = "GDKing";
+		BlackForestAltarConfig.Name = "Ancient bowl";
+		BlackForestAltarConfig.BossPrefab = "gd_king";
+		BlackForestAltarConfig.SacrificeItem = "AncientSeed";
+		BlackForestAltarConfig.SacrificeAmount = 3;
+		altarConfigs.Add(BlackForestAltarConfig);
 
-            var SwampAltarConfig = new AltarConfig();
-            SwampAltarConfig.AltarPrefabName = "Bonemass";
-            SwampAltarConfig.Name = "Boiling death";
-            SwampAltarConfig.BossPrefab = "Bonemass";
-            SwampAltarConfig.SacrificeItem = "WitheredBone";
-            SwampAltarConfig.SacrificeAmount = 10;
-            altarConfigs.Add(SwampAltarConfig);
+		var SwampAltarConfig = new AltarConfig();
+		SwampAltarConfig.AltarPrefabName = "Bonemass";
+		SwampAltarConfig.Name = "Boiling death";
+		SwampAltarConfig.BossPrefab = "Bonemass";
+		SwampAltarConfig.SacrificeItem = "WitheredBone";
+		SwampAltarConfig.SacrificeAmount = 10;
+		altarConfigs.Add(SwampAltarConfig);
 
-			var MountainsAltarConfig = new AltarConfig();
-			MountainsAltarConfig.AltarPrefabName = "Dragonqueen";
-			MountainsAltarConfig.Name = "Sacrificial altar";
-			MountainsAltarConfig.BossPrefab = "Dragon";
-			MountainsAltarConfig.SacrificeItem = "DragonEgg";
-			MountainsAltarConfig.SacrificeAmount = 1;
-			MountainsAltarConfig.ItemStandName = "dragoneggcup";
-			altarConfigs.Add(MountainsAltarConfig);
+		var MountainsAltarConfig = new AltarConfig();
+		MountainsAltarConfig.AltarPrefabName = "Dragonqueen";
+		MountainsAltarConfig.Name = "Sacrificial altar";
+		MountainsAltarConfig.BossPrefab = "Dragon";
+		MountainsAltarConfig.SacrificeItem = "DragonEgg";
+		MountainsAltarConfig.SacrificeAmount = 1;
+		MountainsAltarConfig.ItemStandName = "dragoneggcup";
+		altarConfigs.Add(MountainsAltarConfig);
 
-			var PlainsAltarConfig = new AltarConfig();
-			PlainsAltarConfig.AltarPrefabName = "GoblinKing";
-			PlainsAltarConfig.Name = "Mystical altar";
-			PlainsAltarConfig.BossPrefab = "GoblinKing";
-			PlainsAltarConfig.SacrificeItem = "GoblinTotem";
-			PlainsAltarConfig.SacrificeAmount = 1;
-			PlainsAltarConfig.ItemStandName = "goblinking_totemholder";
-			altarConfigs.Add(PlainsAltarConfig);
-
-
-            // EVA
-            var MistlandsAltarConfig = new AltarConfig();
-            MistlandsAltarConfig.AltarPrefabName = "SvartalfrQueenAltar_New";
-            MistlandsAltarConfig.Name = "Cursed Altar";
-            MistlandsAltarConfig.BossPrefab = "SvartalfarQueen";
-            MistlandsAltarConfig.SacrificeItem = "CursedEffigy";
-            MistlandsAltarConfig.SacrificeAmount = 5;
-            altarConfigs.Add(MistlandsAltarConfig);
-
-            var DeepNorthAltarConfig = new AltarConfig();
-            DeepNorthAltarConfig.AltarPrefabName = "JotunnAltar";
-            DeepNorthAltarConfig.Name = "Frozen Altar";
-            DeepNorthAltarConfig.BossPrefab = "Jotunn";
-            DeepNorthAltarConfig.SacrificeItem = "YmirsSoulEssence";
-            DeepNorthAltarConfig.SacrificeAmount = 5;
-            altarConfigs.Add(DeepNorthAltarConfig);
-
-            var AshlandsAltarConfig = new AltarConfig();
-            AshlandsAltarConfig.AltarPrefabName = "BlazingDamnedOneAltar";
-            AshlandsAltarConfig.Name = "Blazing Altar";
-            AshlandsAltarConfig.BossPrefab = "HelDemon";
-            AshlandsAltarConfig.SacrificeItem = "FenrirsHeart";
-            AshlandsAltarConfig.SacrificeAmount = 5;
-            altarConfigs.Add(AshlandsAltarConfig);
+		var PlainsAltarConfig = new AltarConfig();
+		PlainsAltarConfig.AltarPrefabName = "GoblinKing";
+		PlainsAltarConfig.Name = "Mystical altar";
+		PlainsAltarConfig.BossPrefab = "GoblinKing";
+		PlainsAltarConfig.SacrificeItem = "GoblinTotem";
+		PlainsAltarConfig.SacrificeAmount = 1;
+		PlainsAltarConfig.ItemStandName = "goblinking_totemholder";
+		altarConfigs.Add(PlainsAltarConfig);
 
 
-            var jsonText = JsonMapper.ToJson(altarConfigs);
-            File.WriteAllText(configPath, jsonText);
-        }
+		// EVA
+		var MistlandsAltarConfig = new AltarConfig();
+		MistlandsAltarConfig.AltarPrefabName = "SvartalfrQueenAltar_New";
+		MistlandsAltarConfig.Name = "Cursed Altar";
+		MistlandsAltarConfig.BossPrefab = "SvartalfarQueen";
+		MistlandsAltarConfig.SacrificeItem = "CursedEffigy";
+		MistlandsAltarConfig.SacrificeAmount = 5;
+		altarConfigs.Add(MistlandsAltarConfig);
+
+		var DeepNorthAltarConfig = new AltarConfig();
+		DeepNorthAltarConfig.AltarPrefabName = "JotunnAltar";
+		DeepNorthAltarConfig.Name = "Frozen Altar";
+		DeepNorthAltarConfig.BossPrefab = "Jotunn";
+		DeepNorthAltarConfig.SacrificeItem = "YmirsSoulEssence";
+		DeepNorthAltarConfig.SacrificeAmount = 5;
+		altarConfigs.Add(DeepNorthAltarConfig);
+
+		var AshlandsAltarConfig = new AltarConfig();
+		AshlandsAltarConfig.AltarPrefabName = "BlazingDamnedOneAltar";
+		AshlandsAltarConfig.Name = "Blazing Altar";
+		AshlandsAltarConfig.BossPrefab = "HelDemon";
+		AshlandsAltarConfig.SacrificeItem = "FenrirsHeart";
+		AshlandsAltarConfig.SacrificeAmount = 5;
+		altarConfigs.Add(AshlandsAltarConfig);
+
+
+		var jsonText = JsonMapper.ToJson(altarConfigs);
+		File.WriteAllText(configPath, jsonText);
+	}
         internal static List<AltarConfig> GetJson()
         {
             var jsonText = File.ReadAllText(configPath);
