@@ -73,9 +73,8 @@ namespace CustomizeAltar
 			}
 		}
 	}
-
-		[HarmonyPatch(typeof(ItemStand), "CanAttach")]
-		public static class ItemStandUseItemAttach
+	[HarmonyPatch(typeof(ItemStand), "CanAttach")]
+	public static class ItemStandUseItemAttach
 		{
 			public static void Postfix(ItemStand __instance, ItemDrop.ItemData item, ref bool __result)
 			{
@@ -106,15 +105,15 @@ namespace CustomizeAltar
 					//return true;
 				}
 				if (__instance.m_supportedTypes.Contains(item.m_shared.m_itemType))
-               			 {
-					Debug.Log($"This is not a support Type");
-					__result = false;
-					return;
+                		{
+					//Debug.Log($"This is not a support Type");
+					//__result = false;
+					//return;
 
 				}
 
 				Debug.Log($"CanAttach Approved");
-				__result = true;
+				__result = true;//  items have itemTypes that it also checks for which is stupid
 			}
 		}
 
@@ -125,7 +124,7 @@ namespace CustomizeAltar
 			{
 				var altarConfigs = GetJson();
 				var Items = new List<ItemDrop>();
-				var ItemsType = new List<ItemDrop.ItemData.ItemType>();
+				//var ItemsType = new List<ItemDrop.ItemData.ItemType>();
 
 				foreach (var config in altarConfigs)
 				{
@@ -139,18 +138,17 @@ namespace CustomizeAltar
 							var scraficeitem = ObjectDB.instance.GetItemPrefab(config.SacrificeItem);
 							var ItemDrop = scraficeitem.GetComponentInChildren<ItemDrop>(true);
 							var ItemData = ItemDrop.m_itemData;
-							var ItemType = ItemData.m_shared.m_itemType;
+							//var ItemType = ItemData.m_shared.m_itemType;
 							if (Items.Count() == 0)
 								Items.Add(ItemDrop);
-							if (ItemsType.Count() == 0 )
-								ItemsType.Add(ItemType);
+							//if (ItemsType.Count() == 0 )
+							//	ItemsType.Add(ItemType);
 
 							__instance.m_supportedItems = Items;
-							Debug.Log($"Itemstand exist for {__instance.m_name} with object name {__instance.gameObject.name} setting to {config.SacrificeItem} with name {ItemData.m_shared.m_name} with type {ItemType}");
+							Debug.Log($"Itemstand exist for {__instance.m_name} with object name {__instance.gameObject.name} setting to {config.SacrificeItem} with name {ItemData.m_shared.m_name}");
 						}
 					}
 					catch (Exception e) { Debug.LogError($"Loading config for {config.ItemStandName + "(Clone)"} failed. {e.Message}"); }
-
 				}
 			}
 		}
