@@ -54,7 +54,6 @@ namespace CustomizeAltar
 		{
 			public static void Postfix(ItemStand __instance, ItemDrop.ItemData item, ref bool __result)
 			{
-				//Debug.Log($"Postfix CanAttach");
 				if (__instance.GetAttachPrefab(item.m_dropPrefab) == null)
 				{
 					Debug.Log($"Overwritting Attach Prefab in CanAttach, hopefully it has an attach- otherwise...");
@@ -80,13 +79,7 @@ namespace CustomizeAltar
 					Debug.Log($"CanAttach types = 0 ");
 					//return true;
 				}
-				if (__instance.m_supportedTypes.Contains(item.m_shared.m_itemType))
-				{
-					//Debug.Log($"This is not a support Type");
-					//__result = false;
-					//return;
-
-				}
+				//if (__instance.m_supportedTypes.Contains(item.m_shared.m_itemType)) future checks
 
 				Debug.Log($"CanAttach Approved");
 				__result = true;//  items have itemTypes that it also checks for which is stupid
