@@ -2,47 +2,71 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
-      "HarmonyX/2.10.0": {
+      "HarmonyX/2.10.2": {
         "type": "package",
         "dependencies": {
           "MonoMod.RuntimeDetour": "22.3.23.4"
         },
         "compile": {
-          "lib/net45/0Harmony.dll": {}
+          "lib/net45/0Harmony.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/0Harmony.dll": {}
+          "lib/net45/0Harmony.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Mono.Cecil/0.11.4": {
         "type": "package",
         "compile": {
-          "lib/net40/Mono.Cecil.Mdb.dll": {},
-          "lib/net40/Mono.Cecil.Pdb.dll": {},
-          "lib/net40/Mono.Cecil.Rocks.dll": {},
-          "lib/net40/Mono.Cecil.dll": {}
+          "lib/net40/Mono.Cecil.Mdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Pdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Rocks.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.dll": {
+            "related": ".Mdb.pdb;.pdb;.Pdb.pdb;.Rocks.pdb"
+          }
         },
         "runtime": {
-          "lib/net40/Mono.Cecil.Mdb.dll": {},
-          "lib/net40/Mono.Cecil.Pdb.dll": {},
-          "lib/net40/Mono.Cecil.Rocks.dll": {},
-          "lib/net40/Mono.Cecil.dll": {}
+          "lib/net40/Mono.Cecil.Mdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Pdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Rocks.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.dll": {
+            "related": ".Mdb.pdb;.pdb;.Pdb.pdb;.Rocks.pdb"
+          }
         }
       },
-      "MonoMod/22.3.23.4": {
+      "MonoMod/22.7.31.1": {
         "type": "package",
         "dependencies": {
           "Mono.Cecil": "0.11.4",
-          "MonoMod.Utils": "22.3.23.4"
+          "MonoMod.Utils": "22.7.31.1"
         },
         "frameworkAssemblies": [
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.exe": {}
+          "lib/net452/MonoMod.exe": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.exe": {}
+          "lib/net452/MonoMod.exe": {
+            "related": ".xml"
+          }
         }
       },
       "MonoMod.RuntimeDetour/22.3.23.4": {
@@ -55,13 +79,17 @@
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.RuntimeDetour.dll": {}
+          "lib/net452/MonoMod.RuntimeDetour.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.RuntimeDetour.dll": {}
+          "lib/net452/MonoMod.RuntimeDetour.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "MonoMod.Utils/22.3.23.4": {
+      "MonoMod.Utils/22.7.31.1": {
         "type": "package",
         "dependencies": {
           "Mono.Cecil": "0.11.4"
@@ -70,55 +98,83 @@
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.Utils.dll": {}
+          "lib/net452/MonoMod.Utils.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.Utils.dll": {}
+          "lib/net452/MonoMod.Utils.dll": {
+            "related": ".xml"
+          }
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
-      "HarmonyX/2.10.0": {
+      "HarmonyX/2.10.2": {
         "type": "package",
         "dependencies": {
           "MonoMod.RuntimeDetour": "22.3.23.4"
         },
         "compile": {
-          "lib/net45/0Harmony.dll": {}
+          "lib/net45/0Harmony.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/0Harmony.dll": {}
+          "lib/net45/0Harmony.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Mono.Cecil/0.11.4": {
         "type": "package",
         "compile": {
-          "lib/net40/Mono.Cecil.Mdb.dll": {},
-          "lib/net40/Mono.Cecil.Pdb.dll": {},
-          "lib/net40/Mono.Cecil.Rocks.dll": {},
-          "lib/net40/Mono.Cecil.dll": {}
+          "lib/net40/Mono.Cecil.Mdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Pdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Rocks.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.dll": {
+            "related": ".Mdb.pdb;.pdb;.Pdb.pdb;.Rocks.pdb"
+          }
         },
         "runtime": {
-          "lib/net40/Mono.Cecil.Mdb.dll": {},
-          "lib/net40/Mono.Cecil.Pdb.dll": {},
-          "lib/net40/Mono.Cecil.Rocks.dll": {},
-          "lib/net40/Mono.Cecil.dll": {}
+          "lib/net40/Mono.Cecil.Mdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Pdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Rocks.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.dll": {
+            "related": ".Mdb.pdb;.pdb;.Pdb.pdb;.Rocks.pdb"
+          }
         }
       },
-      "MonoMod/22.3.23.4": {
+      "MonoMod/22.7.31.1": {
         "type": "package",
         "dependencies": {
           "Mono.Cecil": "0.11.4",
-          "MonoMod.Utils": "22.3.23.4"
+          "MonoMod.Utils": "22.7.31.1"
         },
         "frameworkAssemblies": [
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.exe": {}
+          "lib/net452/MonoMod.exe": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.exe": {}
+          "lib/net452/MonoMod.exe": {
+            "related": ".xml"
+          }
         }
       },
       "MonoMod.RuntimeDetour/22.3.23.4": {
@@ -131,13 +187,17 @@
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.RuntimeDetour.dll": {}
+          "lib/net452/MonoMod.RuntimeDetour.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.RuntimeDetour.dll": {}
+          "lib/net452/MonoMod.RuntimeDetour.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "MonoMod.Utils/22.3.23.4": {
+      "MonoMod.Utils/22.7.31.1": {
         "type": "package",
         "dependencies": {
           "Mono.Cecil": "0.11.4"
@@ -146,55 +206,191 @@
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.Utils.dll": {}
+          "lib/net452/MonoMod.Utils.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.Utils.dll": {}
+          "lib/net452/MonoMod.Utils.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-arm64": {
+      "HarmonyX/2.10.2": {
+        "type": "package",
+        "dependencies": {
+          "MonoMod.RuntimeDetour": "22.3.23.4"
+        },
+        "compile": {
+          "lib/net45/0Harmony.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/0Harmony.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Mono.Cecil/0.11.4": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Mono.Cecil.Mdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Pdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Rocks.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.dll": {
+            "related": ".Mdb.pdb;.pdb;.Pdb.pdb;.Rocks.pdb"
+          }
+        },
+        "runtime": {
+          "lib/net40/Mono.Cecil.Mdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Pdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Rocks.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.dll": {
+            "related": ".Mdb.pdb;.pdb;.Pdb.pdb;.Rocks.pdb"
+          }
+        }
+      },
+      "MonoMod/22.7.31.1": {
+        "type": "package",
+        "dependencies": {
+          "Mono.Cecil": "0.11.4",
+          "MonoMod.Utils": "22.7.31.1"
+        },
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "lib/net452/MonoMod.exe": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net452/MonoMod.exe": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MonoMod.RuntimeDetour/22.3.23.4": {
+        "type": "package",
+        "dependencies": {
+          "Mono.Cecil": "0.11.4",
+          "MonoMod.Utils": "22.3.23.4"
+        },
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "lib/net452/MonoMod.RuntimeDetour.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net452/MonoMod.RuntimeDetour.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MonoMod.Utils/22.7.31.1": {
+        "type": "package",
+        "dependencies": {
+          "Mono.Cecil": "0.11.4"
+        },
+        "frameworkAssemblies": [
+          "System"
+        ],
+        "compile": {
+          "lib/net452/MonoMod.Utils.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net452/MonoMod.Utils.dll": {
+            "related": ".xml"
+          }
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x64": {
-      "HarmonyX/2.10.0": {
+      "HarmonyX/2.10.2": {
         "type": "package",
         "dependencies": {
           "MonoMod.RuntimeDetour": "22.3.23.4"
         },
         "compile": {
-          "lib/net45/0Harmony.dll": {}
+          "lib/net45/0Harmony.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/0Harmony.dll": {}
+          "lib/net45/0Harmony.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Mono.Cecil/0.11.4": {
         "type": "package",
         "compile": {
-          "lib/net40/Mono.Cecil.Mdb.dll": {},
-          "lib/net40/Mono.Cecil.Pdb.dll": {},
-          "lib/net40/Mono.Cecil.Rocks.dll": {},
-          "lib/net40/Mono.Cecil.dll": {}
+          "lib/net40/Mono.Cecil.Mdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Pdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Rocks.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.dll": {
+            "related": ".Mdb.pdb;.pdb;.Pdb.pdb;.Rocks.pdb"
+          }
         },
         "runtime": {
-          "lib/net40/Mono.Cecil.Mdb.dll": {},
-          "lib/net40/Mono.Cecil.Pdb.dll": {},
-          "lib/net40/Mono.Cecil.Rocks.dll": {},
-          "lib/net40/Mono.Cecil.dll": {}
+          "lib/net40/Mono.Cecil.Mdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Pdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Rocks.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.dll": {
+            "related": ".Mdb.pdb;.pdb;.Pdb.pdb;.Rocks.pdb"
+          }
         }
       },
-      "MonoMod/22.3.23.4": {
+      "MonoMod/22.7.31.1": {
         "type": "package",
         "dependencies": {
           "Mono.Cecil": "0.11.4",
-          "MonoMod.Utils": "22.3.23.4"
+          "MonoMod.Utils": "22.7.31.1"
         },
         "frameworkAssemblies": [
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.exe": {}
+          "lib/net452/MonoMod.exe": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.exe": {}
+          "lib/net452/MonoMod.exe": {
+            "related": ".xml"
+          }
         }
       },
       "MonoMod.RuntimeDetour/22.3.23.4": {
@@ -207,13 +403,17 @@
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.RuntimeDetour.dll": {}
+          "lib/net452/MonoMod.RuntimeDetour.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.RuntimeDetour.dll": {}
+          "lib/net452/MonoMod.RuntimeDetour.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "MonoMod.Utils/22.3.23.4": {
+      "MonoMod.Utils/22.7.31.1": {
         "type": "package",
         "dependencies": {
           "Mono.Cecil": "0.11.4"
@@ -222,55 +422,83 @@
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.Utils.dll": {}
+          "lib/net452/MonoMod.Utils.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.Utils.dll": {}
+          "lib/net452/MonoMod.Utils.dll": {
+            "related": ".xml"
+          }
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
-      "HarmonyX/2.10.0": {
+      "HarmonyX/2.10.2": {
         "type": "package",
         "dependencies": {
           "MonoMod.RuntimeDetour": "22.3.23.4"
         },
         "compile": {
-          "lib/net45/0Harmony.dll": {}
+          "lib/net45/0Harmony.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/0Harmony.dll": {}
+          "lib/net45/0Harmony.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Mono.Cecil/0.11.4": {
         "type": "package",
         "compile": {
-          "lib/net40/Mono.Cecil.Mdb.dll": {},
-          "lib/net40/Mono.Cecil.Pdb.dll": {},
-          "lib/net40/Mono.Cecil.Rocks.dll": {},
-          "lib/net40/Mono.Cecil.dll": {}
+          "lib/net40/Mono.Cecil.Mdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Pdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Rocks.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.dll": {
+            "related": ".Mdb.pdb;.pdb;.Pdb.pdb;.Rocks.pdb"
+          }
         },
         "runtime": {
-          "lib/net40/Mono.Cecil.Mdb.dll": {},
-          "lib/net40/Mono.Cecil.Pdb.dll": {},
-          "lib/net40/Mono.Cecil.Rocks.dll": {},
-          "lib/net40/Mono.Cecil.dll": {}
+          "lib/net40/Mono.Cecil.Mdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Pdb.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.Rocks.dll": {
+            "related": ".pdb"
+          },
+          "lib/net40/Mono.Cecil.dll": {
+            "related": ".Mdb.pdb;.pdb;.Pdb.pdb;.Rocks.pdb"
+          }
         }
       },
-      "MonoMod/22.3.23.4": {
+      "MonoMod/22.7.31.1": {
         "type": "package",
         "dependencies": {
           "Mono.Cecil": "0.11.4",
-          "MonoMod.Utils": "22.3.23.4"
+          "MonoMod.Utils": "22.7.31.1"
         },
         "frameworkAssemblies": [
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.exe": {}
+          "lib/net452/MonoMod.exe": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.exe": {}
+          "lib/net452/MonoMod.exe": {
+            "related": ".xml"
+          }
         }
       },
       "MonoMod.RuntimeDetour/22.3.23.4": {
@@ -283,13 +511,17 @@
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.RuntimeDetour.dll": {}
+          "lib/net452/MonoMod.RuntimeDetour.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.RuntimeDetour.dll": {}
+          "lib/net452/MonoMod.RuntimeDetour.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "MonoMod.Utils/22.3.23.4": {
+      "MonoMod.Utils/22.7.31.1": {
         "type": "package",
         "dependencies": {
           "Mono.Cecil": "0.11.4"
@@ -298,24 +530,28 @@
           "System"
         ],
         "compile": {
-          "lib/net452/MonoMod.Utils.dll": {}
+          "lib/net452/MonoMod.Utils.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/MonoMod.Utils.dll": {}
+          "lib/net452/MonoMod.Utils.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
   },
   "libraries": {
-    "HarmonyX/2.10.0": {
-      "sha512": "4ayiy/dlCiW86K2N7Jvbf+VpI5wvP7dncv/6oRmfwRi32UCmCRzCGzsxdMfzJZkp6/26oBW+DrD8vi4UejzVAg==",
+    "HarmonyX/2.10.2": {
+      "sha512": "/5WwkxXX8mPsRuigQt957rJGx1f0dDQxk+bvk4yYITKFjXas9Em+O71zEP8X0ym8OFQQ2XH/2SxS4NC7vEC+Xg==",
       "type": "package",
-      "path": "harmonyx/2.10.0",
+      "path": "harmonyx/2.10.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "harmonyx.2.10.0.nupkg.sha512",
+        "harmonyx.2.10.2.nupkg.sha512",
         "harmonyx.nuspec",
         "lib/net35/0Harmony.dll",
         "lib/net35/0Harmony.xml",
@@ -353,10 +589,10 @@
         "mono.cecil.nuspec"
       ]
     },
-    "MonoMod/22.3.23.4": {
-      "sha512": "ZnDfBKBGOa6O6zPwqpTGZ8tcNXntzefgvkS+Xx/0M8bparBJUI0WCAFR7mFupUGtakA8jKpGB0M47ymDbhTbYg==",
+    "MonoMod/22.7.31.1": {
+      "sha512": "NcfQBxRnQt9TkYPcyMvNRmCgfxvcqPoJbSpyZlYcG8mVtshR5CsQdwqKO5S1696gkVB50pCLSwskBWjzvsZuTg==",
       "type": "package",
-      "path": "monomod/22.3.23.4",
+      "path": "monomod/22.7.31.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -369,7 +605,7 @@
         "lib/net5.0/MonoMod.xml",
         "lib/netstandard2.0/MonoMod.dll",
         "lib/netstandard2.0/MonoMod.xml",
-        "monomod.22.3.23.4.nupkg.sha512",
+        "monomod.22.7.31.1.nupkg.sha512",
         "monomod.nuspec"
       ]
     },
@@ -392,10 +628,10 @@
         "monomod.runtimedetour.nuspec"
       ]
     },
-    "MonoMod.Utils/22.3.23.4": {
-      "sha512": "xso1rHFfcsPy3X1kj2uDk115z9tLTMxPEnba/zdNB6WazvrLRWGPuV9d4hHwr1iVz5quTFlZCbLBlE5fS2TqLA==",
+    "MonoMod.Utils/22.7.31.1": {
+      "sha512": "nI0E1oadXS1iMbfwfCzYF08C1jRQR9cnnHv66a4BSPd4sGu2p6g4BmctCWsdAB6oGKkSJUhcfHfxcfTsDyB94Q==",
       "type": "package",
-      "path": "monomod.utils/22.3.23.4",
+      "path": "monomod.utils/22.7.31.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -407,15 +643,15 @@
         "lib/net5.0/MonoMod.Utils.xml",
         "lib/netstandard2.0/MonoMod.Utils.dll",
         "lib/netstandard2.0/MonoMod.Utils.xml",
-        "monomod.utils.22.3.23.4.nupkg.sha512",
+        "monomod.utils.22.7.31.1.nupkg.sha512",
         "monomod.utils.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
-      "HarmonyX >= 2.10.0",
-      "MonoMod >= 22.3.23.4"
+      "HarmonyX >= 2.10.2",
+      "MonoMod >= 22.7.31.1"
     ]
   },
   "packageFolders": {
@@ -453,17 +689,20 @@
         "dependencies": {
           "HarmonyX": {
             "target": "Package",
-            "version": "[2.10.0, )"
+            "version": "[2.10.2, )"
           },
           "MonoMod": {
             "target": "Package",
-            "version": "[22.3.23.4, )"
+            "version": "[22.7.31.1, )"
           }
         }
       }
     },
     "runtimes": {
       "win": {
+        "#import": []
+      },
+      "win-arm64": {
         "#import": []
       },
       "win-x64": {

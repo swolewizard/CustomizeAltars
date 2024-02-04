@@ -36,17 +36,20 @@
           "dependencies": {
             "HarmonyX": {
               "target": "Package",
-              "version": "[2.10.0, )"
+              "version": "[2.10.2, )"
             },
             "MonoMod": {
               "target": "Package",
-              "version": "[22.3.23.4, )"
+              "version": "[22.7.31.1, )"
             }
           }
         }
       },
       "runtimes": {
         "win": {
+          "#import": []
+        },
+        "win-arm64": {
           "#import": []
         },
         "win-x64": {
