@@ -1,84 +1,48 @@
-# Information:
+**Information:**
+This mod allows you to customize both vanilla and modded altars, enabling you to spawn any boss you desire and choose the sacrifice item and amount. Utilizing JSON configuration, this feature is particularly useful for players who have designed their own bosses through mods like RRR or Unity and wish to spawn them using established altars.
 
-<p>Lets you customize vanilla and modded altars to spawn whatever boss you want and choose what sacrifice item & amount. Through json configuration.
-This would be useful for players that designed their own bosses through RRR or in unity and want to spawn them through already established altars.</p>
+**What's in this mod:**
+- Customization options for all vanilla altars, including Name, BossPrefab, BossItem, and BossItems.
+- Ability to customize altars introduced by other mods into world generation.
 
-Feel free to make a post with information about other altars mods bring in, that you'd like to be added to the default configuration.
+**Configuration:**
+You can configure the Name, BossPrefab, BossItem, and BossItems of all altars in the game, including those introduced by other mods.
+- JSON configuration is available in a new file named "Huntard.CustomizeAltars.json" within your "BepInEx/config" folder.
+- This JSON file can be edited in-game and will update when you save and load an altar to your in-game scene.
 
-# What's in this mod:
-
-* The ability to customize all vanilla altars. E.g (Name & BossPrefab & Bossitem & BossItems)
-
-* The ability to customize all altars brought into world generation through other mods.
-
-
-**<h3>Mods that are included in the default configuration:</h3>**
-
-* EVA﻿
-
-
-# Configuration:
-
-**<h3>You can configure the (Name & BossPrefab & Bossitem & BossItems) of all altars in the game, Including altars brought into world generation through other mods</h3>**
-
-
-
-* Json configuration available in a new json file called "Huntard.CustomizeAltars.json" in your "BepInEx/config" folder.
-
-* This json file can be edited in-game and will update when you save & load in an altar to your in-game scene.
-
-
-Example Config for Bonemass's altar.
+*Example Config for Bonemass's altar:*
 
 	{
-		"AltarPrefabName" : "Bonemass",
-		"Name": "Boiling death",
-		"BossPrefab": "Bonemass",
-		"SacrificeItem": "WitheredBone",
-		"SacrificeAmount" : 10
+	"AltarPrefabName" : "Bonemass",
+	"Name" : "$piece_offerbowl_bonemass",
+	"BossPrefab" : "Bonemass",
+	"SacrificeItem" : "WitheredBone",
+	"SacrificeAmount" : 10,
+	"ItemStandEnabled": false,
+	"ItemStandName" : ""
 	}
 
-**<h3>You can input your own custom configuration in the json to configure altars not covered in the default json.</h3>**
+Deleting the .json configuration will prompt the generation of a new .json file upon game startup and entering a world, automatically incorporating all altars in the game, both vanilla and modded ones.
 
-Example Config for another mods altar.
+**Known Issues:**
+- None
 
-	{
-		"AltarPrefabName" : "PrefabID of altar",
-		"Name": "Name",
-		"BossPrefab": "Boss that gets summoned",
-		"SacrificeItem": "Sacrifice Item",
-		"SacrificeAmount" : 10
-	}
+**Credits:**
+- @thedefside
+- @Belasias
+- @wackymole
 
+**Installation:**
+1. Ensure you have installed BepInEx.
+2. Drag the .dll file into your \Valheim\BepInEx\plugins folder.
 
-# Known Issues:
+**Support:**
+If you like what I do and want to support me, 
 
-* Can't configure the sacrifice item/amount for the Moder/Yagluth altars.
+[![Buy Me A Coffee](https://i.imgur.com/d5IpNXJ.png)](https://www.buymeacoffee.com/Huntard)
 
-## Credit:
-
- @thedefside
-
- @Belasias
-
-## Installation:
-
-* Make sure you have installed bepinex.
-
-* Drag the .dll into your \Valheim\BepInEx\plugins folder.
-
-## Support:
-
-If you like what I do and want to support me.
-
-<a href="https://www.buymeacoffee.com/Huntard"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=Huntard&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
-
-## Github:
-
-Feel free to submit bug reports or pull requests here.
-
-https://github.com/swolewizard/CustomizeAltars
-
+**Github:**
+Feel free to submit bug reports or pull requests [here](https://github.com/swolewizard/CustomizeAltars).
 
 ## Showcase Video:
 
